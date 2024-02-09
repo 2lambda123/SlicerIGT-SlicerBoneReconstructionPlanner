@@ -17,6 +17,8 @@ class BoneReconstructionPlanner(ScriptedLoadableModule):
   """
 
   def __init__(self, parent):
+      """"""
+      
     ScriptedLoadableModule.__init__(self, parent)
     self.parent.title = "BoneReconstructionPlanner"  # TODO: make this more human readable by adding spaces
     self.parent.categories = ["Planning"]  # TODO: set categories (folders where the module shows up in the module selector)
@@ -278,6 +280,8 @@ class BoneReconstructionPlannerWidget(ScriptedLoadableModuleWidget, VTKObservati
     self.initializeParameterNode()
 
   def getParentFolderItemID(self):
+      """"""
+      
     shNode = slicer.vtkMRMLSubjectHierarchyNode.GetSubjectHierarchyNode(slicer.mrmlScene)
     sceneItemID = shNode.GetSceneItemID()
     folderSubjectHierarchyID = shNode.GetItemByName("BoneReconstructionPlanner")
@@ -294,6 +298,8 @@ class BoneReconstructionPlannerWidget(ScriptedLoadableModuleWidget, VTKObservati
 
   @vtk.calldata_type(vtk.VTK_OBJECT)
   def onNodeAboutToBeRemovedEvent(self, caller, event, callData):
+      """"""
+      
     if callData.GetClassName() == 'vtkMRMLMarkupsPlaneNode':
       if callData.GetAttribute("isMandibularPlane") == 'True':
         if len(self.logic.mandiblePlaneObserversAndNodeIDList) > 0:
@@ -685,6 +691,8 @@ class BoneReconstructionPlannerWidget(ScriptedLoadableModuleWidget, VTKObservati
     self._parameterNode.EndModify(wasModified)
 
   def onFixCutGoesThroughTheMandibleTwiceCheckBox(self):
+      """"""
+      
     if self._parameterNode is None or self._updatingGUIFromParameterNode:
       return
 
@@ -697,51 +705,83 @@ class BoneReconstructionPlannerWidget(ScriptedLoadableModuleWidget, VTKObservati
     self._parameterNode.EndModify(wasModified)
 
   def onAddMandibularCurveButton(self):
+      """"""
+      
     self.logic.addMandibularCurve()
 
   def onAddFibulaLineButton(self):
+      """"""
+      
     self.logic.addFibulaLine()
     
   def onAddCutPlaneButton(self):
+      """"""
+      
     self.logic.addCutPlane()
 
   def onMakeModelsButton(self):
+      """"""
+      
     self.logic.makeModels()
 
   def onCreateMiterBoxesFromFibulaPlanesButton(self):
+      """"""
+      
     self.logic.createMiterBoxesFromFibulaPlanes()
 
   def onCreateFibulaCylindersFiducialListButton(self):
+      """"""
+      
     self.logic.createFibulaCylindersFiducialList()
 
   def onCreateCylindersFromFiducialListAndSurgicalGuideBaseButton(self):
+      """"""
+      
     self.logic.createCylindersFromFiducialListAndFibulaSurgicalGuideBase()
 
   def onMakeBooleanOperationsToFibulaSurgicalGuideBaseButton(self):
+      """"""
+      
     self.logic.makeBooleanOperationsToFibulaSurgicalGuideBase()
 
   def onCreateMandibleCylindersFiducialListButton(self):
+      """"""
+      
     self.logic.createMandibleCylindersFiducialList()
   
   def onCreateDentalImplantCylindersFiducialListButton(self):
+      """"""
+      
     self.logic.createDentalImplantCylindersFiducialList()
 
   def onCreateCylindersFromFiducialListAndNeomandiblePiecesButton(self):
+      """"""
+      
     self.logic.createCylindersFromFiducialListAndNeomandiblePieces()
 
   def onCreateSawBoxesFromFirstAndLastMandiblePlanesButton(self):
+      """"""
+      
     self.logic.createSawBoxesFromFirstAndLastMandiblePlanes()
 
   def onMakeBooleanOperationsToMandibleSurgicalGuideBaseButton(self):
+      """"""
+      
     self.logic.makeBooleanOperationsToMandibleSurgicalGuideBase()
 
   def onCreateCylindersFromFiducialListAndMandibleSurgicalGuideBaseButton(self):
+      """"""
+      
     self.logic.createCylindersFromFiducialListAndMandibleSurgicalGuideBase()
 
   def onGenerateFibulaPlanesFibulaBonePiecesAndTransformThemToMandibleButton(self):
+      """"""
+      
     self.logic.onGenerateFibulaPlanesTimerTimeout()
 
   def onCenterFibulaLineButton(self):
+      """"""
+      
     self.logic.centerFibulaLine()
   
   def onShowHideBiggerSawBoxesInteractionHandlesButton(self):
