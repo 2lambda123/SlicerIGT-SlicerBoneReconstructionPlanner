@@ -1195,7 +1195,7 @@ class BoneReconstructionPlannerLogic(ScriptedLoadableModuleLogic):
         mandibularPlanesList[i].SetAndObserveTransformNodeID(transformNode.GetID())
         mandibularPlaneTransformationSuccess = mandibularPlanesList[i].HardenTransform()
         if not (mandibularPlaneTransformationSuccess):
-          Exception('Hardening transforms was not successful')
+          raise Exception('Hardening transforms was not successful')
         
         transformNodeItemID = shNode.GetItemByDataNode(transformNode)
         shNode.SetItemParent(transformNodeItemID, mandiblePlanesTransformsFolder)
@@ -2395,7 +2395,7 @@ class BoneReconstructionPlannerLogic(ScriptedLoadableModuleLogic):
       transformedMandiblePiece.SetAndObserveTransformNodeID(mandible2FibulaTransformsList[i].GetID())
       transformedMandiblePieceTransformationSuccess = transformedMandiblePiece.HardenTransform()
       if not (transformedMandiblePieceTransformationSuccess):
-        Exception('Hardening transforms was not successful')
+        raise Exception('Hardening transforms was not successful')
 
       transformedMandiblePieceItemID = shNode.GetItemByDataNode(transformedMandiblePiece)
       shNode.SetItemParent(transformedMandiblePieceItemID, transformedMandiblePiecesFolder)
@@ -2415,7 +2415,7 @@ class BoneReconstructionPlannerLogic(ScriptedLoadableModuleLogic):
       transformedMandible.SetAndObserveTransformNodeID(mandible2FibulaTransformsList[i].GetID())
       transformedMandibleTransformationSuccess = transformedMandible.HardenTransform()
       if not (transformedMandibleTransformationSuccess):
-        Exception('Hardening transforms was not successful')
+        raise Exception('Hardening transforms was not successful')
 
       transformedMandibleItemID = shNode.GetItemByDataNode(transformedMandible)
       shNode.SetItemParent(transformedMandibleItemID, transformedFullMandiblesFolder)
@@ -2472,7 +2472,7 @@ class BoneReconstructionPlannerLogic(ScriptedLoadableModuleLogic):
       transformedFibulaPiece.SetAndObserveTransformNodeID(fibulaPieceToMandibleAxisTransformNode.GetID())
       transformedFibulaPieceTransformationSuccess = transformedFibulaPiece.HardenTransform()
       if not (transformedFibulaPieceTransformationSuccess):
-        Exception('Hardening transforms was not successful')
+        raise Exception('Hardening transforms was not successful')
 
       transformedFibulaPieceItemID = shNode.GetItemByDataNode(transformedFibulaPiece)
       shNode.SetItemParent(transformedFibulaPieceItemID, transformedFibulaPiecesFolder)
@@ -2535,7 +2535,7 @@ class BoneReconstructionPlannerLogic(ScriptedLoadableModuleLogic):
       planeList[i+1].SetAndObserveTransformNodeID(transformNode.GetID())
       planeTransformationSuccess = planeList[i+1].HardenTransform()
       if not (planeTransformationSuccess):
-        Exception('Hardening transforms was not successful')
+        raise Exception('Hardening transforms was not successful')
       
       transformNodeItemID = shNode.GetItemByDataNode(transformNode)
       shNode.SetItemParent(transformNodeItemID, mandiblePlaneTransformsFolder)
@@ -2685,7 +2685,7 @@ class BoneReconstructionPlannerLogic(ScriptedLoadableModuleLogic):
         duplicateFibulaBonePiecesList[i].SetAndObserveTransformNodeID(duplicateFibulaPieceTransformNode.GetID())
         duplicateFibulaBonePieceTransformationSuccess = duplicateFibulaBonePiecesList[i].HardenTransform()
         if not (duplicateFibulaBonePieceTransformationSuccess):
-          Exception('Hardening transforms was not successful')
+          raise Exception('Hardening transforms was not successful')
 
         duplicateFibulaPieceTransformNodeItemID = shNode.GetItemByDataNode(duplicateFibulaPieceTransformNode)
         shNode.SetItemParent(duplicateFibulaPieceTransformNodeItemID, duplicateFibulaBonePiecesTransformsFolder)
@@ -2850,7 +2850,7 @@ class BoneReconstructionPlannerLogic(ScriptedLoadableModuleLogic):
       biggerMiterBoxTransformationSuccess = biggerMiterBoxModel.HardenTransform()
 
       if not (miterBoxTransformationSuccess and biggerMiterBoxTransformationSuccess):
-        Exception('Hardening transforms was not successful')
+        raise Exception('Hardening transforms was not successful')
 
       miterBoxToWorldChangeOfFrameTransformNodeItemID = shNode.GetItemByDataNode(miterBoxToWorldChangeOfFrameTransformNode)
       shNode.SetItemParent(miterBoxToWorldChangeOfFrameTransformNodeItemID, miterBoxesTransformsFolder)
@@ -2961,7 +2961,7 @@ class BoneReconstructionPlannerLogic(ScriptedLoadableModuleLogic):
       
       cylinderTransformationSuccess = cylinderModel.HardenTransform()
       if not (cylinderTransformationSuccess):
-        Exception('Hardening transforms was not successful')
+        raise Exception('Hardening transforms was not successful')
 
       cylinderToWorldChangeOfFrameTransformNodeItemID = shNode.GetItemByDataNode(cylinderToWorldChangeOfFrameTransformNode)
       shNode.SetItemParent(cylinderToWorldChangeOfFrameTransformNodeItemID, cylindersTransformsFolder)
@@ -3018,7 +3018,7 @@ class BoneReconstructionPlannerLogic(ScriptedLoadableModuleLogic):
 
       cylinderTransformationSuccess = cylinderModel.HardenTransform()
       if not (cylinderTransformationSuccess):
-        Exception('Hardening transforms was not successful')
+        raise Exception('Hardening transforms was not successful')
       
       cylinderToWorldChangeOfFrameTransformNodeItemID = shNode.GetItemByDataNode(cylinderToWorldChangeOfFrameTransformNode)
       shNode.SetItemParent(cylinderToWorldChangeOfFrameTransformNodeItemID, cylindersTransformsFolder)
